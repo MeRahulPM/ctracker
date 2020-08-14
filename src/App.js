@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import { makeStyles } from "@material-ui/core/styles";
+
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import Button from "@material-ui/core/Button";
+
 
 import Break from './images/stay.png'
 
@@ -57,7 +57,7 @@ class App extends Component {
     let stateId=c[1].id
     
     wholeData.forEach(element => {
-      if(element.loc==stateName){
+      if(element.loc===stateName){
         this.setState({totalConfirmed:element.totalConfirmed})
         this.setState({active:element.totalConfirmed-(element.deaths+element.discharged)})
         this.setState({recovered:element.discharged})
@@ -73,7 +73,7 @@ class App extends Component {
   
     x.forEach(element=>{
       console.log("ddd")
-      if(element.statecode==stateId.toUpperCase()){
+      if(element.statecode===stateId.toUpperCase()){
         Object.keys(element.districtData).forEach((item)=>{
          
           listItems.push(item)
@@ -89,7 +89,7 @@ class App extends Component {
     let listItemss=[]
       Object.values(listItems).forEach((item)=>
     {
-      if(item=='Unknown'){
+      if(item==='Unknown'){
         item='others'
       }
       listItemss.push(<li >{item}</li>)
@@ -144,7 +144,7 @@ class App extends Component {
     }
     
   render() {
-    const { data, error } = this.state
+    //const { data, error } = this.state
     
     
   return (
