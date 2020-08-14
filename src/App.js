@@ -104,6 +104,7 @@ class App extends Component {
           item="not available"
         }
         listItemActives.push(<li >{item}</li>)
+      
       }
       ) 
     
@@ -215,7 +216,7 @@ class App extends Component {
         </ul>
         </Grid>
         <Grid item xs={3} >
-         {this.state.clicked?<h3>Active case</h3>:null} 
+         {this.state.clicked?<h3>Active</h3>:null} 
         <ul>
         {this.state.listItemActive }
         </ul>
